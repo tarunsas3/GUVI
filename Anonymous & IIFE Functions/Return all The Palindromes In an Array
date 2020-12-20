@@ -1,0 +1,15 @@
+array = ["mam","man","lol","tom"]
+arr = []
+result = ""
+var palindromes = function (str) {
+    revstr = str.split("").reverse().join("")
+    if(str == revstr)
+    {
+        result += str + " "
+    }
+}
+for(i = 0; i < array.length; i++)
+{
+    arr = palindromes(array[i])
+}
+console.log(result.trim())
