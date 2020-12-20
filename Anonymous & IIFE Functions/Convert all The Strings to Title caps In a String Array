@@ -1,0 +1,14 @@
+array = ["hi", "hello", "good", "morning", "world"]
+arr = []
+var titlecase = function (str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+  return str.join(' ');
+}
+for(i = 0; i < array.length; i++)
+{
+    arr[i] = titlecase(array[i])
+}
+console.log(arr)
