@@ -1,5 +1,16 @@
+//Anonymous Function
+
 array = ["apple", "bannana", "orange", "apple", "orange"]
 removeDuplicates = function(arr) {
     return arr.filter((value, index) => arr.indexOf(value) === index)
 }
 console.log(removeDuplicates(array))
+
+//IIFE Function
+
+array = ["apple", "bannana", "orange", "apple", "orange"];
+result = [];
+(function removeDuplicates(arr) {
+    result = arr.filter((value, index) => arr.indexOf(value) === index)
+    console.log(result)
+}) (array)
