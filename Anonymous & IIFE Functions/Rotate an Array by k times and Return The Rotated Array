@@ -1,0 +1,26 @@
+//Anonymous Function
+
+data = [1,2,3,4,5,6,7,8,9]
+rotate = function (array, rot) {
+    let i = 0
+    while (i < rot)
+    {
+        array.unshift(array.pop())
+        i++
+    }
+    return array
+}
+console.log(rotate(data, 1))
+
+//IIFE Function
+
+data = [1,2,3,4,5,6,7,8,9];
+(function (array, rot) {
+    let i = 0
+    while (i < rot)
+    {
+        array.unshift(array.pop())
+        i++
+    }
+    console.log(array)
+}) (data, 1)
