@@ -1,3 +1,5 @@
+//Anonymous Function
+
 array = ["mam","man","lol","tom"]
 arr = []
 result = ""
@@ -13,3 +15,19 @@ for(i = 0; i < array.length; i++)
     arr = palindromes(array[i])
 }
 console.log(result.trim())
+
+// IIFE Function
+
+array = ["mam","man","lol","tom"]
+arr = [];
+(function palindrome (data) {
+    for(i = 0; i < data.length; i++)
+    {
+        str = data[i]
+        revstr = str.split("").reverse().join("")
+        if(str == revstr)
+        {
+            console.log(str)
+        }
+    }
+}) (array)
