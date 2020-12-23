@@ -1,0 +1,5 @@
+array = ["apple", "bannana", "orange", "apple", "orange"]
+removeDuplicates = function(arr) {
+    return arr.filter((value, index) => arr.indexOf(value) === index)
+}
+console.log(removeDuplicates(array))
