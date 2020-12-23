@@ -1,3 +1,5 @@
+//Anonymous Function
+
 array = [1,2,3,4,5,6,7,8,9]
 arr = 0
 val = ""
@@ -24,3 +26,29 @@ for(i = 0; i < array.length; i++)
     arr = result(array[i])
 }
 console.log(val.trim())
+
+//IIFE Function
+
+array = [1,2,3,4,5,6,7,8,9];
+arr = 0;
+(function prime(data) {
+    for(j = 0; j < data.length; j++)
+    {
+        if(data[j] === 1)
+        {
+            console.log("")
+        }
+        for(var i = 2; i < data[j]; i++)
+        {
+            if(data[j] % i === 0)
+            {
+                break;
+            }
+            else
+            {
+                console.log(data[j])
+                break;
+            }
+        }
+    }
+}) (array)
