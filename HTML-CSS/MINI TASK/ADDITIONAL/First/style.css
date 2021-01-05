@@ -1,0 +1,27 @@
+.shapes {
+  display: flex;
+}
+.first {
+  background-color: red;
+  color: red;
+  height: 300px;
+  width: 200px;
+}
+.second {
+  background-color: #00ff36;
+  color: #00ff36;
+  height: 300px;
+  width: 200px;
+}
+.third {
+  background-color: blue;
+  color: blue;
+  height: 150px;
+  width: 200px;
+}
+.fourth {
+  background-color: #ff00e4;
+  color: #ff00e4;
+  height: 150px;
+  width: 200px;
+}
