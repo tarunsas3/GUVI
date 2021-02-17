@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Invoice</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #fff">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div
+            class="customerInfoSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h1 class="text-center">Customer</h1>
+            <label for="customerID">Customer ID</label>
+            <input
+              class="form-control"
+              type="text"
+              id="customerID"
+              placeholder="Enter customer id"
+            />
+            <br />
+            <label for="customerName">Customer Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="customerName"
+              placeholder="Enter customer name"
+            />
+            <br />
+            <label for="customerDiscount">Customer Discount</label>
+            <input
+              class="form-control"
+              type="text"
+              id="customerDiscount"
+              placeholder="Enter customer discount"
+            />
+            <button
+              class="btn"
+              id="customerSubmit"
+              style="
+                background: #e50914;
+                border: none;
+                margin-left: 34%;
+                color: white;
+                margin-top: 20px;
+                padding: 8px;
+              "
+            >
+              Submit
+            </button>
+          </div>
+          <div
+            class="customerDataSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              margin-top: 80px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h3 class="text-center">Customer Data</h3>
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Discount</th>
+                </tr>
+              </thead>
+              <tbody class="customerTable"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div
+            class="InvoiceInfoSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h1 class="text-center">Invoice</h1>
+            <label for="invoiceID">Invoice ID</label>
+            <input
+              class="form-control"
+              type="text"
+              id="invoiceID"
+              placeholder="Enter invoice id"
+            />
+            <br />
+            <label for="invoiceCustomer">Invoice Customer</label>
+            <select class="form-control" id="invoiceCustomer"></select>
+            <br />
+            <label for="invoiceAmount">Invoice Amount</label>
+            <input
+              class="form-control"
+              type="text"
+              id="invoiceAmount"
+              placeholder="Enter invoice amount"
+            />
+            <button
+              class="btn"
+              id="invoiceSubmit"
+              style="
+                background: #e50914;
+                border: none;
+                margin-left: 39%;
+                color: white;
+                margin-top: 20px;
+                padding: 8px;
+              "
+            >
+              Submit
+            </button>
+          </div>
+          <div
+            class="InvoiceDataSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              margin-top: 80px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h3 class="text-center">Invoice Data</h3>
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody class="invoiceTable"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div
+            class="AccountInfoSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h1 class="text-center">Account</h1>
+            <label for="accountID">Account ID</label>
+            <input
+              class="form-control"
+              type="text"
+              id="accountID"
+              placeholder="Enter account id"
+            />
+            <br />
+            <label for="accountCustomer">Account Customer</label>
+            <select class="form-control" id="accountCustomer"></select>
+            <br />
+            <label for="accountBalance">Account Balance</label>
+            <input
+              class="form-control"
+              type="text"
+              id="accountBalance"
+              placeholder="Enter account balance"
+            />
+            <button
+              class="btn"
+              id="accountSubmit"
+              style="
+                background: #e50914;
+                border: none;
+                margin-left: 39%;
+                color: white;
+                margin-top: 20px;
+                padding: 8px;
+              "
+            >
+              Submit
+            </button>
+          </div>
+          <div
+            class="AccountDataSection"
+            style="
+              background-color: #fff;
+              padding: 20px;
+              margin: 20px;
+              margin-top: 80px;
+              border-radius: 30px;
+              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+            "
+          >
+            <h3 class="text-center">Account Data</h3>
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody class="accountTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
