@@ -6,234 +6,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer Invoice</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
   </head>
-  <body style="background-color: #fff">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div
-            class="customerInfoSection"
+
+  <body>
+    <div class="wrapper" style="display: flex; margin: 20px; padding: 20px">
+      <div class="row my-2" style="padding: 20px">
+        <div
+          class="customerAddSection"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e0e0;
+            height: 20%;
+            border-radius: 20px;
+          "
+        >
+          <h1 style="padding: 10px">Add Customer</h1>
+          <button
             style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+              height: 100%;
+              width: 60px;
+              border-bottom-right-radius: 20px;
+              border-top-right-radius: 20px;
+              font-size: 36px;
             "
+            type="button"
+            class="btn btn-danger ml-2"
+            data-toggle="modal"
+            data-target="#myModal"
           >
-            <h1 class="text-center">Customer</h1>
-            <label for="customerID">Customer ID</label>
-            <input
-              class="form-control"
-              type="text"
-              id="customerID"
-              placeholder="Enter customer id"
-            />
-            <br />
-            <label for="customerName">Customer Name</label>
-            <input
-              class="form-control"
-              type="text"
-              id="customerName"
-              placeholder="Enter customer name"
-            />
-            <br />
-            <label for="customerDiscount">Customer Discount</label>
-            <input
-              class="form-control"
-              type="text"
-              id="customerDiscount"
-              placeholder="Enter customer discount"
-            />
-            <button
-              class="btn"
-              id="customerSubmit"
-              style="
-                background: #e50914;
-                border: none;
-                margin-left: 34%;
-                color: white;
-                margin-top: 20px;
-                padding: 8px;
-              "
-            >
-              Submit
-            </button>
-          </div>
-          <div
-            class="customerDataSection"
-            style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              margin-top: 80px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
-            "
-          >
-            <h3 class="text-center">Customer Data</h3>
-            <table class="table text-center">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Discount</th>
-                </tr>
-              </thead>
-              <tbody class="customerTable"></tbody>
-            </table>
+            +
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="modal"
+        id="myModal"
+        data-backdrop="static"
+        data-keyboard="false"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Customers</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control mb-2"
+                  id="customerID"
+                  placeholder="Enter Unique Customer ID "
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control mb-2"
+                  id="customerName"
+                  placeholder="Customer Name"
+                />
+              </div>
+              <div class="form-group">
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">%</div>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="discount"
+                    placeholder="Discount"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                data-dismiss="modal"
+                id="addCustomer-btn"
+              >
+                Save
+              </button>
+            </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div
-            class="InvoiceInfoSection"
-            style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
-            "
-          >
-            <h1 class="text-center">Invoice</h1>
-            <label for="invoiceID">Invoice ID</label>
-            <input
-              class="form-control"
-              type="text"
-              id="invoiceID"
-              placeholder="Enter invoice id"
-            />
-            <br />
-            <label for="invoiceCustomer">Invoice Customer</label>
-            <select class="form-control" id="invoiceCustomer"></select>
-            <br />
-            <label for="invoiceAmount">Invoice Amount</label>
-            <input
-              class="form-control"
-              type="text"
-              id="invoiceAmount"
-              placeholder="Enter invoice amount"
-            />
-            <button
-              class="btn"
-              id="invoiceSubmit"
-              style="
-                background: #e50914;
-                border: none;
-                margin-left: 39%;
-                color: white;
-                margin-top: 20px;
-                padding: 8px;
-              "
-            >
-              Submit
-            </button>
-          </div>
-          <div
-            class="InvoiceDataSection"
-            style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              margin-top: 80px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
-            "
-          >
-            <h3 class="text-center">Invoice Data</h3>
-            <table class="table text-center">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Customer</th>
-                  <th>Amount</th>
-                </tr>
-              </thead>
-              <tbody class="invoiceTable"></tbody>
-            </table>
-          </div>
+      </div>
+
+      <div class="row my-2 text-center">
+        <div class="col-md-8">
+          <div class="col p-3 table-responsive" id="invoiceTable"></div>
         </div>
-        <div class="col-sm-4">
+
+        <div class="col-md-4">
           <div
-            class="AccountInfoSection"
+            class="row border p-2"
             style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+              background-color: #e0e0e0;
+              border-radius: 20px;
+              padding: 10px;
             "
           >
-            <h1 class="text-center">Account</h1>
-            <label for="accountID">Account ID</label>
-            <input
-              class="form-control"
-              type="text"
-              id="accountID"
-              placeholder="Enter account id"
-            />
-            <br />
-            <label for="accountCustomer">Account Customer</label>
-            <select class="form-control" id="accountCustomer"></select>
-            <br />
-            <label for="accountBalance">Account Balance</label>
-            <input
-              class="form-control"
-              type="text"
-              id="accountBalance"
-              placeholder="Enter account balance"
-            />
-            <button
-              class="btn"
-              id="accountSubmit"
-              style="
-                background: #e50914;
-                border: none;
-                margin-left: 39%;
-                color: white;
-                margin-top: 20px;
-                padding: 8px;
-              "
-            >
-              Submit
-            </button>
+            <h3 class="w-auto" style="padding: 10px">Customer Wallet</h3>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <select class="form-control mr-sm-2" id="walletCustomerList">
+                  <option selected>Select...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Rs</div>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="walletAmount"
+                    placeholder="Amount"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="generateInvoice"
+                  />
+                  <label class="form-check-label" for="autoSizingCheck">
+                    Generate Invoice
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 justify-content-center">
+              <div class="form-group">
+                <button type="submit" class="btn btn-success" id="deposit">
+                  Deposit
+                </button>
+                <button type="submit" class="btn btn-danger" id="withdraw">
+                  Withdraw
+                </button>
+              </div>
+            </div>
           </div>
+
           <div
-            class="AccountDataSection"
+            class="row border p-2"
             style="
-              background-color: #fff;
-              padding: 20px;
-              margin: 20px;
-              margin-top: 80px;
-              border-radius: 30px;
-              box-shadow: 5px 5px 20px 20px rgb(238, 197, 197);
+              background-color: #e0e0e0;
+              margin-top: 20px;
+              border-radius: 20px;
+              padding: 10px;
             "
           >
-            <h3 class="text-center">Account Data</h3>
-            <table class="table text-center">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Customer</th>
-                  <th>Balance</th>
-                </tr>
-              </thead>
-              <tbody class="accountTable"></tbody>
-            </table>
+            <h3 class="w-auto" style="padding: 10px">Customer Purchase</h3>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <select class="form-control mr-sm-2" id="purchaseCustomerList">
+                  <option selected>Select...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Rs</div>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="purchaseAmount"
+                    placeholder="Amount"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  id="displayModal-btn"
+                  data-toggle="modal"
+                  data-target="#verification"
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js"></script>
+    <div
+      class="modal fade"
+      id="verification"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Amount after Discount</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="purchaseConfirm">Enter valid data</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              id="purchase-btn"
+              id="purchaseButton"
+            >
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
+
