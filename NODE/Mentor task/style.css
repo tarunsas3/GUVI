@@ -1,0 +1,20 @@
+.bg-dark {
+  background: #fff !important;
+}
+.navbar-dark .navbar-brand {
+  color: black !important;
+  font-weight: bold !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: black !important;
+  border-right: 1px solid red;
+  padding: 10px 10px 10px 10px;
+}
+#mentor_list {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+#mentor_section {
+  text-align: center;
+}
